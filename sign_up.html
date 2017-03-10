@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>互金平台用户注册页</title>
+	<link rel="icon" href="images/changeIcon.png">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body bgcolor="rgb(100,100,100)">
+
+<!-- 首部 -->
+<div class="sign_up_head"><a href="index.html"><img src="images/logo.png" height="90" width="200"></a></div>
+
+<!-- 注册模块开始 -->
+<div class="box">
+<form method="POST">
+	<label>&nbsp;<span class="star">*</span>&nbsp;&nbsp;账户名：</label>
+	<input class="inu" type="text" id="user_in"  ><br>
+	
+	
+	<label><span class="star">*</span>&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+	<input class="inu"  type="password" id="user_pwd"><br>
+	
+	<label><span class="star">*</span>确认密码：</label>
+	<input  class="inu" type="password" id="user_rpwd"><br>
+
+	<label><span class="star">*</span>&nbsp;&nbsp;&nbsp;&nbsp;验证码：</label>
+	<input  class="inu" type="text" id="code"><br>
+	</form>
+	
+	<input type="checkbox" id="rr"><span id="read">我已阅读并同意<a href="#">《用户注册协议》</a></span><br>
+	<input type="button" id="lg_button" value="完成注册">
+	<div class="goto"><span>已有账号？</span><a href="login.html">直接登录</a></div>
+</div>
+<!-- 注册模块结束 -->
+<script src="js/sign_up_script.js"></script>
+</body>
+</html>
