@@ -296,3 +296,18 @@ body {
     border: 1px solid #f68e56;
     color: #f68e56;
 }
+#content-box{
+	width: 80%;
+	margin: 20px auto;
+}
+#left_nav{
+	width: 200px;
+	float: left;
+	background: white;
+
+}
+#right_nav{
+	width: 80%;
+	margin-left:250px;
+	background: green;
+}
