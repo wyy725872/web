@@ -307,7 +307,21 @@ body {
 
 }
 #right_nav{
-	width: 80%;
+	width: 70%;
 	margin-left:250px;
-	background: green;
+	background: white;
+	padding: 10px;
+}
+.info_nav li{
+	width: 98%;
+	height: 40px;
+	color:#666;
+	line-height:40px;
+	border-left: 2px white solid;
+	border-bottom: 1px #ebebeb solid;
+	text-align: center;
+}
+.info_nav li:hover,.info_nav .my{
+	color:orange;
+	border-left: 2px orange solid;
 }
