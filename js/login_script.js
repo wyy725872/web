@@ -57,16 +57,7 @@ window.onload=function(){
 		if(!(/^1[34578]\d{9}$/.test(user_in.value))){ 
         			alert("手机号码有误，请重填");  
        			return false; 
-   		}else{
-   			var use=user_in.value;
    		}
-		/*ajax('json/login_json.js',function(str){
-			var arr=JSON.parse(str);
-			if(use!=arr.user)
-				alert("该号码还未注册！");
-		},function(){
-			alert("失败");
-		})*/
 	}
 	
 	var user_pwd=document.getElementById('user_pwd');
@@ -80,28 +71,10 @@ window.onload=function(){
 	var usenm=document.getElementById('user_in');
 	lg_button.onclick=function(){	
 		if(usenm.value&&user_pwd.value){
-			/*$.ajax({
-				 type: 'POST',
- 				 url:  '/api/login',
-      				 data: { username: usenm.value,
-					password:user_pwd.value,
-					code:code_input.value,
-					role:'1',
-				          },
-				 dataType: 'json',
-				 success: function(str) {
-					var arr=JSON.parse(str);
-					if(str.msg=='登录成功'){
-						window.location.href='index.html';
-					}else{
-						alert('登录失败，请重新登录');
-					}
-				}
-			});*/
 			$.ajax({
 				url: '/api/login',
 				type: 'POST',
-				dataType: 'json',
+				dataType: 'jsonp',
 				data: {username: usenm.value,
 					password:user_pwd.value,
 					code:code_input.value,

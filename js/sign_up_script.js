@@ -1,4 +1,51 @@
 window.onload=function(){
+	/*显示验证码*/
+	var img=document.createElement('img');
+	var code_input=document.getElementById('code');
+
+	$.ajax({
+	url: '/api/login/getCaptcha',
+	type: 'GET',
+	dataType: 'json',
+	})
+	.done(function(result) {
+		
+		console.log(result.data);
+		var img_box=document.getElementById('behind');
+		
+		img.src=result.data.captchaData;
+		img.id='codeimg';
+		img_box.appendChild(img);
+		
+		code_input.onchange=function(){
+			if(code_input.value!=result.data.codeKey){
+				alert('验证码输入错误');
+				
+			}
+		}
+
+		
+		
+	})
+
+	/*看不清换一张*/
+	img.onclick=function(){
+		$.ajax({
+			url: '/api/login/getCaptcha',
+			type: 'GET',
+			dataType: 'json',
+		})
+		.done(function(result) {
+			img.src=result.data.captchaData;
+		
+			var code_input=document.getElementById('code');
+			code_input.onchange=function(){
+				if(code_input.value!==result.data.codeKey){
+					alert('验证码输入错误');
+				}
+			}
+		})
+	}
 	var user_in=document.getElementById('user_in');
 	user_in.value='手机号码';
 	user_in.onfocus=function(){
@@ -10,30 +57,7 @@ window.onload=function(){
 		if(!(/^1[34578]\d{9}$/.test(user_in.value))){ 
         			alert("手机号码有误，请重填");  
        			return false; 
-   		}else{
-   			var use=user_in.value;
-   		}
-		
-		$.ajax({
-			url: '/path/to/file',
-			type: 'default GET (Other values: POST)',
-			dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-			data: {param1: 'value1'},
-		})
-		.done(function(str) {
-			var arr=JSON.parse(str);
-			if(use==arr.user)
-				alert("该号码已被注册！");
-			else{
-				alert("可使用");
-			}
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
+   		}	
 		
 	}
 	
@@ -53,21 +77,25 @@ window.onload=function(){
 	var lg_button=document.getElementById('lg_button');
 	lg_button.onclick=function(){
 		if(user_in.value&&user_pwd.value&&user_rpwd.value){
-			$.ajax({
-				url: '/path/to/file',
-				type: 'default GET (Other values: POST)',
-				dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-				data: {param1: 'value1'},
-				})
-				.done(function() {
-					window.location.href="index.html";
-				})
-				.fail(function() {
-					console.log("error");
-				})
-				.always(function() {
-					console.log("complete");
-			});
+			
+		$.ajax({
+			url: '/api/regist',
+			type: 'POST',
+			dataType: 'jsonp',
+			data: {nickname: user_in.value,
+				password:user_pwd.value,
+				code:code_input.value,
+				role:'1'},
+		})
+		.done(function() {
+			window.location.href="index.html";
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 		}else{
 			alert('信息未填完整');
 		}
