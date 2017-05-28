@@ -219,7 +219,7 @@ body {
 	margin:18px 0;
 }
 .hjs-listinfo-right{
-	width: 204px; 
+	width: 20px; 
 	padding-top: 34px; 
 	position: relative;
 }
@@ -324,4 +324,113 @@ body {
 .info_nav li:hover,.info_nav .my{
 	color:orange;
 	border-left: 2px orange solid;
+}
+.hfax-account-infobox .hfax-banlance-left strong,.hfax-account-infobox .hfax-banlance-right strong{
+font-size:24px;
+color:#222;
+font-weight:400;
+}
+.hfax-account-infobox .hfax-banlance-left .hfax-recharge,.hfax-account-infobox .hfax-banlance-left .hfax-tixian,.hfax-account-infobox .hfax-banlance-right .hfax-recharge,.hfax-account-infobox .hfax-banlance-right .hfax-tixian{
+	color:#fff;
+	width:72px;
+	height:36px;
+	line-height:36px;
+	background:#f26c4f;
+	border-radius:2px;
+	text-align:center;
+	vertical-align:text-bottom;
+	margin-left: 11px;
+	display: inline-block;
+}
+.hfax-account-infobox .hfax-banlance-left .hfax-tixian,.hfax-account-infobox .hfax-banlance-right .hfax-tixian{
+	background:#00a0e9;
+}
+
+.hfax-border{
+	border-top:1px solid #dcdcdc;
+}
+.hfax-fund{
+	font-size:14px;
+	color:#00a0e9;
+	float:right;
+	padding-top:8px;
+	padding-right: 84px;
+}
+.hfax-account-detail{
+	border:1px solid #dcdcdc;
+	padding:40px 38px;
+	background:#fff;
+}
+.hfax-account-detail .hfax-detail-titlebox{
+	color:#666;
+}
+.hfax-account-detail .hfax-detail-titlebox .hfax-detail-right{
+	font-size:14px
+}
+.hfax-account-detail .hfax-detail-titlebox .hfax-detail-right span{
+	color:#f26c4f;
+	margin-right:8px;
+}
+.hfax-account-detail .hfax-detail-piebox{
+	padding-top:42px;
+}
+.hfax-account-detail .hfax-detail-piebox .hfax-piebox-left{
+	width:380px;
+	height:290px;
+	top:-20px;
+	left:-18px;
+}
+.hfax-account-detail .hfax-detail-piebox .hfax-piebox-right{
+	width:350px;
+}
+.hfax-account-detail .hfax-detail-piebox .hfax-piebox-right table{
+	width:100%;
+	font-size:14px;
+}
+.hfax-account-detail .hfax-detail-piebox .hfax-piebox-right table th{
+	text-align:left;
+	background:#eee;
+	color:#666;
+	height:34px;
+	line-height:34px;
+	padding-left:20px;
+}
+.hfax-account-detail .hfax-detail-piebox .hfax-piebox-right table td{
+	height:34px;
+	line-height:34px;
+	color:#222;
+	padding-left:20px;
+	border-bottom:1px solid #dcdcdc;
+	text-align:left;
+}
+.hfax-account-detail .hfax-detail-piebox .hfax-piebox-right table td a{
+	color:#222;
+}
+.hfax-account-infobox .hfax-banlance-left, .hfax-account-infobox .hfax-banlance-right {
+    border-right: 1px solid #dcdcdc;
+    padding: 12px 10px 20px 26px;
+    min-width: 300px;
+    position: relative;
+    width: 300px;
+}
+.hfax-account-infobox .hfax-banlance-right{
+	padding:12px 0 20px 26px;
+	border:none;
+	min-width:300px;
+}
+.left{
+	float: left;
+}
+#money_box{
+	width: 160px;
+	height: 100px;
+	border: 1px solid gray;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 200px auto;
+	background: #eee;
+	padding: 50px;
 }
