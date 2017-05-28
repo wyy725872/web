@@ -69,28 +69,31 @@ window.onload=function(){
 
 	var lg_button=document.getElementById('lg_button');
 	var usenm=document.getElementById('user_in');
-	lg_button.onclick=function(){	
-		if(usenm.value&&user_pwd.value){
+	lg_button.onclick=function(){
+		var role=$('input:radio:checked').val();
+		if(usenm.value&&user_pwd.value&&role){
 			$.ajax({
 				url: '/api/login',
-				type: 'POST',
-				dataType: 'jsonp',
-				data: {username: usenm.value,
+				type: 'GET',
+				dataType: 'json',
+				data: {
+					userPhone: usenm.value,
 					password:user_pwd.value,
 					code:code_input.value,
-					role:'1'
+					role:role
 				},
 			})
-			.done(function(str) {
-				if(str.msg=='登录成功'){
-					window.location.href='index.html';
+			.success(function(str){
+				if(str){
+					var userId=str.data.userId;
+					window.location.href='../index.html?userId='+userId+'&role='+role;
 				}else{
-					alert('登录失败，请重新登录');
+					alert('登陆失败');
 				}
 			})
-			.fail(function() {
-				console.log("error");
-			})
+					.fail(function(){
+						alert('登陆失败');
+					});
 			
 		}else{
 			alert('信息未填完整');

@@ -76,32 +76,33 @@ window.onload=function(){
 
 	var lg_button=document.getElementById('lg_button');
 	lg_button.onclick=function(){
-		if(user_in.value&&user_pwd.value&&user_rpwd.value){
+		var role=$('input:radio:checked').val();
+		if(user_in.value&&user_pwd.value&&user_rpwd.value&&role){
 			
-		$.ajax({
-			url: '/api/regist',
-			type: 'POST',
-			dataType: 'jsonp',
-			data: {nickname: user_in.value,
-				password:user_pwd.value,
-				code:code_input.value,
-				role:'1'},
-		})
-		.done(function() {
-			window.location.href="index.html";
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-		}else{
-			alert('信息未填完整');
-		}
-	}	
-		
-			
-	/*增加验证码检测*/
+			$.ajax({
+				url: '/api/regist',
+				type: 'GET',
+				dataType: 'json',
+				data: {
+					userPhone: user_in.value,
+					password:user_pwd.value,
+					code:code_input.value,
+					role:role
+				},
+			})
+			.success(function(str){
+				if(str.msg=='注册成功'){
+					alert('注册成功，跳转至登陆页面...');
+					window.location.href="../login.html";
+
+				}
+			})
+			.fail(function(){
+				alert('注册失败');
+			});
+			}else{
+				alert('信息未填完整');
+			}
+		}		
 
 }
