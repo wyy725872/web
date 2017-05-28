@@ -33,8 +33,14 @@
 <div id="content-box">
 	<div id="left_nav">
 		<ul class="info_nav">
+			<div id="left_nav">
+		<ul class="info_nav">
 			<a href="#"><li class="self_info my">个人信息</li></a>
+			<a href="fix_secret.html"><li class="self_money">修改密码</li></a>
+			<a href="real_name.html"><li class="self_money">实名认证</li></a>
 			<a href="self_money.html"><li class="self_money">我的投资</li></a>
+		</ul>
+	</div>
 		</ul>
 	</div>
 
@@ -43,9 +49,70 @@
 			
 		</div>
 		<div id="self_money_box">
-			
+			<div class="hfax-account-infobox">
+    <div class="hfax-account-banlance clearfix">
+        <div class="hfax-banlance-left left">
+            <p>
+                <span>账户余额(元)</span>  <em class="answer"></em>
+                </p>
+            <p></p>
+            <p class="account_ye">
+                <i>￥</i><strong> 
+						 0.00
+					</strong>  </p>
+               <p class="account_btns"><span class="hfax-recharge" id="save_money">充值</span> 
+                <span class="hfax-tixian" id="tixian_money">提现</span>
+                </p>
+                
+           
+        </div>
+        <div class="hfax-banlance-right left">
+            <p>
+                <span>账户总资产(元)</span>  <em class="answer"></em>
+                </p>
+             <p></p>
+             <p style="padding-top: 10px;">
+                <i>￥</i><strong>
+                0.00
+					</strong>
+             </p>
+        </div>
+    </div>
+    <hr class="hfax-border">
+    <div class="hfax-account-banlance clearfix">
+        <div class="hfax-banlance-left left">
+            <p>
+                <span>累计净收益(元)</span>  <em class="answer"></em>
+                </p>
+            <p></p>
+            <p class="hfax-yellow">
+                <i>￥</i><strong> 
+						0.00
+					</strong>
+            </p>
+        </div>
+        <div class="hfax-banlance-right left">
+            <p>
+                <span>冻结金额(元)</span>  <!-- <em class="answer"></em> -->
+                </p>
+            <p></p>
+            <p style="padding-top: 10px;">
+                <i>￥</i><strong> 
+						0.00
+					</strong>
+            </p>
+        </div>
+    </div>
+</div>
 		</div>
 	</div>
+	<div id="money_box" style="display:none">
+                	<p id="money_type"></p>
+                	<label>请输入金额：</label>
+                	<input type="text" name="send_money" id="send_money">
+                	<input type="button" name="yes"  id="yes" value="确定">
+                	<input type="button" name="cancel" id="cancel" value="取消">
+                </div>
 </div>
 <script src="js/self_script.js"></script>
 </body>

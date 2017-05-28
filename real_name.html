@@ -33,10 +33,14 @@
 <div id="content-box">
 	<div id="left_nav">
 		<ul class="info_nav">
-			<a href="self.html"><li class="self_info ">个人信息</li></a>
+			<div id="left_nav">
+		<ul class="info_nav">
+			<a href="self.html"><li class="self_info">个人信息</li></a>
 			<a href="fix_secret.html"><li class="self_money">修改密码</li></a>
-			<a href="real_name.html"><li class="self_money">实名认证</li></a>
-			<a href="#"><li class="self_money my">我的投资</li></a>
+			<a href="#"><li class="self_money my">实名认证</li></a>
+			<a href="self_money.html"><li class="self_money">我的投资</li></a>
+		</ul>
+	</div>
 		</ul>
 	</div>
 
@@ -45,7 +49,17 @@
 			
 		</div>
 		<div id="self_money_box">
-			
+			<label>&nbsp;<span class="star">*</span>&nbsp;&nbsp;身份证号：</label>
+	<input class="inu" type="text" id="user_id"  ><br>
+	<label>&nbsp;<span class="star">*</span>&nbsp;&nbsp;真实姓名：</label>
+	<input class="inu" type="text" id="user_name"  ><br>
+	<label>&nbsp;<span class="star">*</span>&nbsp;&nbsp;地址：</label>
+	<input class="inu" type="text" id="user_address"  ><br>
+	<label>&nbsp;<span class="star">*</span>&nbsp;&nbsp;交易密码：</label>
+	<input class="inu" type="password" id="user_transpassword"  ><br>
+	<label>&nbsp;<span class="star">*</span>&nbsp;&nbsp;确认交易密码：</label>
+	<input class="inu" type="password" id="user_rtpwd"  ><br>
+	<input type="button" id="up_button" value="确定">
 		</div>
 	</div>
 </div>
